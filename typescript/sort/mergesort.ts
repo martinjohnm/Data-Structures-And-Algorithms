@@ -41,8 +41,5 @@ function merge(left : any[], right : any[]) : any[] {
 }
 
 let sortedNumberArrayy: number[] =
-    mergeSort([38, 27, 43, 10]);
-let sortedStringArray: string[] =
-    mergeSort(['JavaScript', 'GeeksforGeeks', 'TypeScript']);
+    mergeSort([38, 27, 43, 10,5859, 5,5,5,5,5,4545,234,12,34,5,6,7,764325,3]);
 console.log(sortedNumberArrayy);
-console.log(sortedStringArray);

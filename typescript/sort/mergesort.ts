@@ -1,44 +1,48 @@
 
 
-function mergeSort(array : any[]) : any[] {
 
-    if (array.length <= 1) {
-        return array;
+
+function mergeSort (arr : any[])  {
+
+    if (arr.length <= 1) {
+        return arr
     }
 
-    const middle = Math.floor(array.length / 2)
-    const leftHalf = array.slice(0,middle);
-    const rightHalf = array.slice(middle);
+    let middle = Math.floor(arr.length / 2)
+    let leftArr = arr.slice(0,middle)
+    let rightArr = arr.slice(middle)
 
-    return merge(mergeSort(leftHalf), mergeSort(rightHalf))
+    return mergeTwoSortedArray(mergeSort(leftArr), mergeSort(rightArr))
+
 }
 
 
 
-function merge(left : any[], right : any[]) : any[] {
+
+function mergeTwoSortedArray (left : any[], right : any[]) : any[] {
 
     let result : any[] = [];
-    let leftIndex  = 0
-    let rightIndex = 0;
+    let leftIdx = 0;
+    let rightIdx = 0;
 
-    while (leftIndex < left.length && rightIndex < right.length) {
-        
-        if (left[leftIndex] < right[rightIndex]) {
+    while (leftIdx < left.length && rightIdx < right.length) {
 
-            result.push(left[leftIndex])
-            leftIndex ++;
 
+        if (left[leftIdx] < right[rightIdx]) {
+
+            result.push( left[leftIdx] )
+            leftIdx ++;
         } else {
 
-            result.push(right[rightIndex])
-            rightIndex++;
-
+            result.push( right[rightIdx] )
+            rightIdx ++;
         }
- 
     }
 
-    return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex)))
+    return result.concat(left.slice(leftIdx).concat(right.slice(rightIdx)))
+
 }
+
 
 let sortedNumberArrayy: number[] =
     mergeSort([38, 27, 43, 10,5859, 5,5,5,5,5,4545,234,12,34,5,6,7,764325,3]);

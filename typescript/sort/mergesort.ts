@@ -2,7 +2,7 @@
 
 
 
-function mergeSort (arr : any[])  {
+function mergeSort (arr : any[]) : any[]  {
 
     if (arr.length <= 1) {
         return arr
